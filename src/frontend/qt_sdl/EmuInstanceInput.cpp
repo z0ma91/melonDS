@@ -447,7 +447,7 @@ void EmuInstance::inputProcess()
 
         // TODO: actual mapping for this
         analogX = ((float) SDL_JoystickGetAxis(joystick, 0)) / 32768.f;
-        analogY = ((float) SDL_JoystickGetAxis(joystick, 1)) / 32768.f;
+        analogY = -((float) SDL_JoystickGetAxis(joystick, 1)) / 32768.f;
         if (std::fabs(analogX) < 0.1) analogX = 0;
         if (std::fabs(analogY) < 0.1) analogY = 0;
     }
